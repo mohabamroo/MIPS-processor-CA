@@ -1,0 +1,18 @@
+1- ALU module (data1, data2 input, result, zero output)
+
+2- control module (opcode input, control_signals output)
+	- how to determine ALUOp?
+	- should make ALU control?
+		if aluop==0 then alutctl = funcCode
+		else aluctl = aluop?
+		in lecture 5, aluop assumed was 2 bits
+	- how to assign dontcares?
+	- should we set defaults for signals?
+
+3- memory module (address, read, write, data input, data output)
+
+4- stages registers:
+	IF/ID -> +PC, INS => 64 bits
+	ID/EX -> +PC, SIG, data1, data2, offset, rd, rt => 147 bits
+	EX/MEM -> SIG, aluRES, ++PC, zero, data2, regDest => 107 bits
+	MEM/WB -> SIG, memData, aluRES, regDest => 71 bits
