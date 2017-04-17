@@ -16,3 +16,13 @@
 	ID/EX -> +PC, SIG, data1, data2, offset, rd, rt => 147 bits
 	EX/MEM -> SIG, aluRES, ++PC, zero, data2, regDest => 107 bits
 	MEM/WB -> SIG, memData, aluRES, regDest => 71 bits
+5- cpu implementation:
+	pc, pc4 and pcj: if condition to determine
+	if stall, pcsrc
+
+6- instruction memory module 4Kx32-bits?
+	$readmemh from external file?
+7- register module 32x32:
+	input: clk, rs, rt, write, writedata, rd
+	output: data1, data2 32-bits
+	caution: zero register
