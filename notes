@@ -1,4 +1,6 @@
-1- ALU module (data1, data2 input, result, zero output)
+1- ALU module (data1, data2 input, result, zero output);
+	- is the one implemented in lab enough?
+	- what about alu control?
 
 2- control module (opcode input, control_signals output)
 	- how to determine ALUOp?
@@ -11,18 +13,33 @@
 
 3- memory module (address, read, write, data input, data output)
 
-4- stages registers:
+4- stages registers: How to implement them? module containing what?
 	IF/ID -> +PC, INS => 64 bits
 	ID/EX -> +PC, SIG, data1, data2, offset, rd, rt => 147 bits
 	EX/MEM -> SIG, aluRES, ++PC, zero, data2, regDest => 107 bits
 	MEM/WB -> SIG, memData, aluRES, regDest => 71 bits
-5- cpu implementation:
+	
+5- cpu implementation: calling other modules then what?
+	should be hardcoded for a set of instructions?
 	pc, pc4 and pcj: if condition to determine
 	if stall, pcsrc
 
 6- instruction memory module 4Kx32-bits?
 	$readmemh from external file?
+
 7- register module 32x32:
 	input: clk, rs, rt, write, writedata, rd
 	output: data1, data2 32-bits
 	caution: zero register
+
+8- modules: is sth missing?
+	alu, alu control, control signals
+	instruction memory, data memory,
+	registers, stages registers
+
+9- ana bgd 5ayf
+
+10- size of both memories??
+non-blocking assignment, parallel: <=
+sequential assignment: =
+DONT MIX in the same always block!

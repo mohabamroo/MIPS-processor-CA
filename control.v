@@ -36,7 +36,7 @@ module control(opcode, RegDest, Branch, MemRead,
 			MemWrite <= 1'b0;
 			ALUSrc <= 1'b1;
 			RegWrite <= 1'b1;
-			ALUOp <= 3'b000; // add in alu?
+			ALUOp <= 3'b100; // add in alu?
 		end
 		// andi
 		6'b001100: begin
@@ -47,7 +47,7 @@ module control(opcode, RegDest, Branch, MemRead,
 			MemWrite <= 1'b0;
 			ALUSrc <= 1'b1;
 			RegWrite <= 1'b1;
-			ALUOp <= 3'b010; // and in alu?
+			ALUOp <= 3'b101;
 		end
 		// ori
 		6'b001000: begin
@@ -58,7 +58,7 @@ module control(opcode, RegDest, Branch, MemRead,
 			MemWrite <= 1'b0;
 			ALUSrc <= 1'b1;
 			RegWrite <= 1'b1;
-			ALUOp <= 3'b011; // add in alu?
+			ALUOp <= 3'b111;
 		end
 		// lw
 		6'b001000: begin

@@ -1,3 +1,4 @@
+// compiled!
 module ALU(in1, in2, aluop, outRes, zeroflag);
 	input [31:0] in1;
 	input [31:0] in2;
@@ -18,12 +19,15 @@ module ALU(in1, in2, aluop, outRes, zeroflag);
 		// I didnt find a strict set
 		// 000 means add or sth like that
 		case(aluop)
-			0: outRes = in1 + in2;	// add
+			0: outRes = in1 + in2;	// add,ld, st
 			1: outRes = in1 - in2;	// sub
-			2: outRes = in1 & in2;	// and
-			3: outRes = in1 | in2;	// or
+			2: outRes = in1 && in2;	// and
+			3: outRes = in1 || in2;	// or
 			4: outRes = in1 < in2;	// slt
-			5: outRes = ~(in1 | in2);	// nor
+			5: outRes = ~(in1 | in2); // nor
+			// where to get the shift amount??
+			6: outRes =  in1 << in2; //sll
+			7: outRes = in1 >> in2; //slr
 		endcase
 	end
 endmodule
