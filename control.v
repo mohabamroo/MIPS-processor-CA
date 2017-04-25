@@ -96,11 +96,11 @@ module control(opcode, RegDest, Branch, MemRead,
 		// bne
 		6'b000101: begin
 			RegDest <= 1'b0; // don't care
-			Branch <= 1'b0;
+			Branch <= 1'b1;
 			MemRead <= 1'b0;
 			MemtoReg <= 1'b0; // don't care
-			MemWrite <= 1'b1;
-			ALUSrc <= 1'b1;
+			MemWrite <= 1'b0;
+			ALUSrc <= 1'b0; // ???
 			RegWrite <= 1'b0;
 			ALUOp <= 3'b001; // from table in lec
 		end

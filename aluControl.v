@@ -10,12 +10,14 @@ begin
 	3'b010:
 		begin
 			case(function_code[5:0])
-				6'b100000: alu_control = 3'd0;	// add
-				6'b100010:  alu_control = 3'd1;	// sub
+				6'b100000:	alu_control = 3'd0;	// add
+				6'b100010:	alu_control = 3'd1;	// sub
 				6'b100100:  alu_control = 3'd2;	// and
 				6'b100101:  alu_control = 3'd3; // or
 				6'b101010:  alu_control = 3'd4; // slt
-				default: alu_control = 3'd0; // add
+				6'b000000:	alu_control = 3'd6; // sll
+				6'b000002:	alu_control = 3'd7; // srl
+				default:	alu_control = 3'd0; // add
 			endcase
 		end
 	// load, store => add
@@ -23,7 +25,7 @@ begin
 	// beq, bnq ?? => subtract
 	3'b001: begin alu_control = 3'd1; end
 	// addi
-	3'b100: begin alu_control = 3'd1; end
+	3'b100: begin alu_control = 3'd0; end
 	// andi
 	3'b101: begin alu_control = 3'd2; end
 	// ori
