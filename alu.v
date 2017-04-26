@@ -12,9 +12,9 @@ module ALU(in1, in2, aluop, outRes, zeroflag);
 	always @ (in1, in2, aluop)
 	begin
 		if(in1 == in2)
-		zeroflag = 1;
+		begin zeroflag = 1; end
 		else
-		zeroflag = 0;
+		begin zeroflag = 0; end
 		// these controls are customizable
 		// I didnt find a strict set
 		// 000 means add or sth like that

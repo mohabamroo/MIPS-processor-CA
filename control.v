@@ -104,5 +104,6 @@ module control(opcode, RegDest, Branch, MemRead,
 			RegWrite <= 1'b0;
 			ALUOp <= 3'b001; // from table in lec
 		end
+	endcase
 	end
 endmodule

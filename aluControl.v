@@ -16,7 +16,7 @@ begin
 				6'b100101:  alu_control = 3'd3; // or
 				6'b101010:  alu_control = 3'd4; // slt
 				6'b000000:	alu_control = 3'd6; // sll
-				6'b000002:	alu_control = 3'd7; // srl
+				6'b000001:	alu_control = 3'd7; // srl
 				default:	alu_control = 3'd0; // add
 			endcase
 		end
@@ -33,4 +33,4 @@ begin
 	endcase
 end
 
-endmoule
+endmodule

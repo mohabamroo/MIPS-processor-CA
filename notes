@@ -47,3 +47,6 @@ DONT MIX in the same always block!
 Main module
 ------------
 CYCLE OF MIPS:
+
+clk:
+data mem and pipeline regs
