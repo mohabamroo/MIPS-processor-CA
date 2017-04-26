@@ -11,13 +11,13 @@ begin
 	3'b010:
 		begin
 			case(function_code[5:0])
-				6'b100000:	alu_control = 3'd0;	// add
-				6'b100010:	alu_control = 3'd1;	// sub
-				6'b100100:  alu_control = 3'd2;	// and
-				6'b100101:  alu_control = 3'd3; // or
-				6'b101010:  alu_control = 3'd4; // slt
-				6'b000000:	alu_control = 3'd6; // sll
-				6'b000001:	alu_control = 3'd7; // srl
+				6'h20:	alu_control = 3'd0;	// add
+				6'h22:	alu_control = 3'd1;	// sub
+				6'h24:  alu_control = 3'd2;	// and
+				6'h25:  alu_control = 3'd3; // or
+				6'h2A:  alu_control = 3'd4; // slt
+				6'h0:	alu_control = 3'd6; // sll
+				6'h2:	alu_control = 3'd7; // srl
 				default:	alu_control = 3'd0; // add
 			endcase
 		end

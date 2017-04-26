@@ -1,5 +1,5 @@
 // compiled and tested
-module ALU(in1, in2, aluop, outRes, zeroflag);
+module ALU(in1, in2, aluop, outRes, zeroflag, shamt);
 	input [31:0] in1;
 	input [31:0] in2;
 	input [2:0] aluop;
@@ -26,8 +26,8 @@ module ALU(in1, in2, aluop, outRes, zeroflag);
 			4: outRes = in1 < in2;	// slt
 			5: outRes = ~(in1 | in2); // nor
 			// where to get the shift amount??
-			6: outRes =  in1 << in2; //sll
-			7: outRes = in1 >> in2; //slr
+			6: outRes =  in1 << shamt; //sll
+			7: outRes = in1 >> shamt; //slr
 		endcase
 	end
 endmodule

@@ -77,7 +77,7 @@ assign shifted_sign_extend = sign_extend << 2;
 assign branch_addr = incremented_pc_reg2 + shifted_sign_extend;
 mux_32 alu_mux(ALUSrc_reg, read_data_2_reg, sign_extend_reg, alu_in2);
 mux_5 rd_mux(RegDest_reg, rt_reg, rd_reg, rd_after_mux);
-ALU alu_unit(read_data_1_reg, alu_in2, alu_control, alu_res, zeroflag);
+ALU alu_unit(read_data_1_reg, alu_in2, alu_control, alu_res, zeroflag, shamt);
 
 EXMEM(clk, branch_addr, zeroflag, alu_res, read_data_2_reg,
 	MemtoReg_reg, RegWrite_reg, rd_after_mux, MemRead_reg, MemWrite_reg, Branch_reg,
