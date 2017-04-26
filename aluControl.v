@@ -1,3 +1,4 @@
+// compiled and tested
 module aluControl(function_code, alu_operation, alu_control);
 input [5:0] function_code;
 input [2:0] alu_operation;
@@ -32,5 +33,22 @@ begin
 	3'b111: begin alu_control = 3'd3; end
 	endcase
 end
+
+endmodule
+
+module test();
+reg [5:0] function_code;
+reg [2:0] alu_operation;
+wire [2:0] alu_control;
+
+initial
+	begin
+	// or, expecting 3
+	alu_operation = 3'b010; function_code = 6'b100101;
+	#10 $display("alu control = %b", alu_control);
+	end
+
+	always @(*);
+		aluControl test(function_code, alu_operation, alu_control);
 
 endmodule

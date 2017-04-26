@@ -1,3 +1,4 @@
+// compiled and tested
 // that simple??
 module instructionMemory(pc, instruction);
 	input[31:0] pc;

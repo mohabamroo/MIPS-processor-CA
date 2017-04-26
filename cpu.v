@@ -1,4 +1,4 @@
-module cpu();
+module cpu(clk);
 
 // IF Signal Declarations
 

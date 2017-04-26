@@ -1,3 +1,4 @@
+// compiled and tested
 module control(opcode, RegDest, Branch, MemRead,
 	MemtoReg, MemWrite, ALUOp, ALUSrc, RegWrite);
 	input [5:0] opcode;
@@ -61,7 +62,7 @@ module control(opcode, RegDest, Branch, MemRead,
 			ALUOp <= 3'b111;
 		end
 		// lw
-		6'b001000: begin
+		6'b100011: begin
 			RegDest <= 1'b0;
 			Branch <= 1'b0;
 			MemRead <= 1'b1;
@@ -106,4 +107,24 @@ module control(opcode, RegDest, Branch, MemRead,
 		end
 	endcase
 	end
+endmodule
+
+module test();
+
+reg [5:0] opcode;
+wire RegDest, Branch, MemRead,
+MemtoReg, MemWrite, ALUSrc, RegWrite;
+wire [2:0] ALUOp;
+
+initial
+begin
+	opcode = 6'b100011; // lw
+	// expecting 0, 0, 1, 1, 0, 1, 1, 000
+	#10 $display("RegDest: %b, Branch: %b, MemRead: %b, MemtoReg: %b, MemWrite: %b, ALUSrc: %b, RegWrite: %b, ALUOp: %b",
+	RegDest, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite, ALUOp);
+end
+
+always@(*);
+	control test(opcode, RegDest, Branch, MemRead,
+	MemtoReg, MemWrite, ALUOp, ALUSrc, RegWrite);
 endmodule

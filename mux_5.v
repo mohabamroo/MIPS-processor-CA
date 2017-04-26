@@ -1,4 +1,4 @@
-// compiled
+// compiled and tested
 module mux_5(select, in1, in2, out);
 
 input select;

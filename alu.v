@@ -1,4 +1,4 @@
-// compiled!
+// compiled and tested
 module ALU(in1, in2, aluop, outRes, zeroflag);
 	input [31:0] in1;
 	input [31:0] in2;
