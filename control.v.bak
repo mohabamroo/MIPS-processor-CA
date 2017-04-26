@@ -109,7 +109,7 @@ module control(opcode, RegDest, Branch, MemRead,
 	end
 endmodule
 
-module control_test();
+module test();
 
 reg [5:0] opcode;
 wire RegDest, Branch, MemRead,

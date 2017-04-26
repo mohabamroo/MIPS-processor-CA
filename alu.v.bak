@@ -32,7 +32,7 @@ module ALU(in1, in2, aluop, outRes, zeroflag);
 	end
 endmodule
 
-module alu_test();
+module test();
 	reg [31:0] x, y;
 	reg [2:0] sel;
 	wire [31:0] res;

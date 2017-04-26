@@ -34,7 +34,7 @@ begin
 end
 endmodule
 
-module rg_test();
+module test();
     reg [31:0] writeData;
     reg regWrite;
     reg [4:0] rs, rd, rt;

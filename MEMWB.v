@@ -4,7 +4,7 @@
 // 2-bits WB control signals
 // 2-bits WB control signals => mem_to_reg, reg_write
 
-module EXMEM(clk, alu_res, read_data,
+module MEMWB(clk, alu_res, read_data,
 	rd, mem_to_reg, reg_write,
 
 	alu_res_reg, read_data_reg, rd_reg,

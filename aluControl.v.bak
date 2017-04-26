@@ -36,7 +36,7 @@ end
 
 endmodule
 
-module alu_c_test();
+module test();
 reg [5:0] function_code;
 reg [2:0] alu_operation;
 wire [2:0] alu_control;

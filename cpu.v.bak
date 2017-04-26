@@ -1,9 +1,9 @@
 
 module cpu(clk);
-input clk;
+
 // IF vars declaration
-wire [31:0] instruction, pc, incremented_pc, incremented_pc_reg, instruction_reg;
-reg [31:0] pc_reg;
+wire [31:0] instruction, pc, incremented_pc, pc_reg, incremented_pc_reg, instruction_reg;
+
 // ID vars declaration
 wire [31:0] sign_extend;
 wire [4:0] rs, rd, rt;
@@ -87,17 +87,5 @@ EXMEM(clk, branch_addr, zeroflag, alu_res, read_data_2_reg,
 	rd_after_mux_reg, MemRead_reg2, MemWrite_reg2, Branch_reg2);
 // -------------------------------------------------
 
-assign PCSrc = zeroflag_reg && Branch_reg2;
-
-dataMemory memo(clk, alu_res_reg, write_data, MemRead_reg2, MemWrite_reg2,
-	read_data);
-// ---------------------------------------------------
-
-MEMWB(clk, alu_res_reg, read_data, rd_after_mux_reg, MemtoReg_reg2, RegWrite_reg2,
-
-	alu_res_reg2, read_data_reg, rd_after_mux_reg2,
-	MemtoReg_reg3, RegWrite_reg3);
-
-mux_32 mem_mux(MemtoReg_reg3, read_data_reg, alu_res_reg2, writeData);
 
 endmodule
