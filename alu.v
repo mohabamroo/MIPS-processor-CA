@@ -3,6 +3,7 @@ module ALU(in1, in2, aluop, outRes, zeroflag, shamt);
 	input [31:0] in1;
 	input [31:0] in2;
 	input [2:0] aluop;
+	input [4:0] shamt;
 
 	// variables (manipulated) should be reg,
 	// but wires are just outputs (not manipulated)
